@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencial - Hospedaje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg.jpeg"alt="Logo R&V Hospedaje" class="img-logo">
+        </div>
+        <button class="menu-hamburger" id="btn-hamburger" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#Nosotros">Nosotros</a>
+            <a href="#Habitaciones">Habitaciones</a>
+            <a href="#promociones">Promociones</a>
+            <a href="#contacto">Cómo Llegar</a>
+            
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero-banner">
+        
+        <div class="motor-reserva">
+            <form id="reserva-form">
+                <input type="hidden" id="habitacion_seleccionada" name="habitacion" value="General / No especificada">
+                
+                <div class="input-group">
+                    <label>Llegada</label>
+                    <input type="date" id="fecha-llegada" name="fecha-llegada" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Salida</label>
+                    <input type="date" id="fecha-salida" name="fecha-salida" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Huéspedes</label>
+                    <input type="number" id="cant_huespedes" name="cant_huespedes" min="1" max="4" value="1" required>
+                </div>
+                <button type="button" onclick="iniciarReserva()">Ver Disponibilidad</button>
+            </form>
+        </div>
+
+    </section>
+
+    <section id="Habitaciones" class="seccion-habitaciones">
+    <div class="contenedor-habitaciones">
+        <h2>Nuestras Habitaciones</h2>
+        <svg width="250" height="15" viewBox="0 0 250 15" fill="none" class="vector-separador">
+            <line x1="0" y1="7.5" x2="105" y2="7.5" stroke="var(--verde-oscuro)" stroke-width="2"/>
+            <polygon points="125,0 135,7.5 125,15 115,7.5" fill="var(--verde-oscuro)"/>
+            <line x1="145" y1="7.5" x2="250" y2="7.5" stroke="var(--verde-oscuro)" stroke-width="2"/>
+        </svg>
+        <p class="subtitulo-habitaciones"> Descansa en uno de nuestros 17 cuartos totalmente equipados para tu comodidad.</p>
+        
+        <div class="grid-cuartos">
+            <!-- 1. HABITACIÓN SIMPLE -->
+            <article class="tarjeta-cuarto">
+                <div class="contenedor-carrusel">
+                    <img id="img-simple" src="img/hab-simple.jpg" alt="Habitación Simple">
+                    <button class="flecha-carrusel izq" onclick="cambiarFoto('img-simple', -1)">❮</button>
+                    <button class="flecha-carrusel der" onclick="cambiarFoto('img-simple', 1)">❯</button>
+                </div>
+                <div class="info-cuarto">
+                    <h3>Habitación Simple</h3>
+                    <ul class="caracteristicas-cuarto">
+                        <li><i class="fa-solid fa-user"></i> Capacidad: 1 Persona</li>
+                        <li><i class="fa-solid fa-tv"></i> TV con cable</li>
+                        <li><i class="fa-solid fa-shower"></i> Baño privado</li>
+                    </ul>
+                    <p class="precio">S/ 50.00 <span>/ noche</span></p>
+                    <button class="btn-reservar" onclick="seleccionarCuarto('Habitación Simple', 50)">Seleccionar</button>
+                </div>
+            </article>
+
+            <!-- 2. HABITACIÓN DOBLE -->
+            <article class="tarjeta-cuarto">
+                <div class="contenedor-carrusel">
+                    <img id="img-doble" src="img/hab-doble.jpg" alt="Habitación Doble">
+                    <button class="flecha-carrusel izq" onclick="cambiarFoto('img-doble', -1)">❮</button>
+                    <button class="flecha-carrusel der" onclick="cambiarFoto('img-doble', 1)">❯</button>
+                </div>
+                <div class="info-cuarto">
+                    <h3>Habitación Doble</h3>
+                    <p class="etiqueta-pet">🐾 Pet Friendly</p>
+                    <ul class="caracteristicas-cuarto">
+                        <li><i class="fa-solid fa-user"></i> Capacidad: 2 Persona</li>
+                        <li><i class="fa-solid fa-tv"></i> TV con cable</li>
+                        <li><i class="fa-solid fa-shower"></i> Baño privado</li>
+                    </ul>
+                    <p class="precio">S/ 80.00 <span>/ noche</span></p>
+                    <button class="btn-reservar" onclick="seleccionarCuarto('Habitación Doble', 80)">Seleccionar</button>
+                </div>
+            </article>
+
+            <!-- 3. HABITACIÓN FAMILIAR -->
+            <article class="tarjeta-cuarto">
+                <div class="contenedor-carrusel">
+                    <img id="img-familiar" src="img/hab-familiar.jpg" alt="Habitación Familiar">
+                    <button class="flecha-carrusel izq" onclick="cambiarFoto('img-familiar', -1)">❮</button>
+                    <button class="flecha-carrusel der" onclick="cambiarFoto('img-familiar', 1)">❯</button>
+                </div>
+                <div class="info-cuarto">
+                    <h3>Habitación Familiar</h3>
+                    <ul class="caracteristicas-cuarto">
+                        <li><i class="fa-solid fa-user"></i> Capacidad: 4 Persona</li>
+                        <li><i class="fa-solid fa-tv"></i> TV con cable</li>
+                        <li><i class="fa-solid fa-shower"></i> Baño privado amplio</li>
+                    </ul>
+                    <p class="precio">S/ 120.00 <span>/ noche</span></p>
+                    <button class="btn-reservar" onclick="seleccionarCuarto('Habitación Familiar', 120)">Seleccionar</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+    <section id="promociones" class="seccion-promociones">
+        <div class="contenedor-promociones">
+            
+            <div class="cabecera-promos">
+                <h2>Servicios de Alimentación</h2>
+                <svg width="250" height="15" viewBox="0 0 250 15" fill="none" class="vector-separador">
+                    <line x1="0" y1="7.5" x2="105" y2="7.5" stroke="var(--verde-oscuro)" stroke-width="2"/>
+                    <polygon points="125,0 135,7.5 125,15 115,7.5" fill="var(--verde-oscuro)"/>
+                    <line x1="145" y1="7.5" x2="250" y2="7.5" stroke="var(--verde-oscuro)" stroke-width="2"/>
+                </svg>
+                <p>Complementa tu estadía con nuestra oferta gastronómica local.</p>
+            </div>
+
+            <div class="grid-promos">
+                
+                <article class="tarjeta-promo">
+                    <img src="img/desayuno.jpg" alt="Combo Desayuno">
+                    <div class="info-promo">
+                        <h3>Combo Desayuno </h3>
+                        <p>Empieza tu día con energía. Incluye café, jugo natural, panes artesanales, queso fresco y huevos al gusto.</p>
+                        <p class="precio-promo">S/ 15.00 <span> por persona</span></p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-promo">
+                    <img src="img/almuerzo.jpg" alt="Almuerzo Tradicional">
+                    <div class="info-promo">
+                        <h3>Menú Almuerzo Tradicional</h3>
+                        <p>Disfruta de la sazón de Cocachacra con nuestros platos típicos. Incluye entrada, plato de fondo a elección y refresco natural.</p>
+                        <p class="precio-promo">S/ 35.00 <span>por persona</span></p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-promo">
+                    <img src="img/cena.jpg" alt="Cena Ligera">
+                    <div class="info-promo">
+                        <h3>Cena Ligera</h3>
+                        <p>Para un descanso reparador. Opciones de sopas, mates calientes y piqueos suaves ideales para la noche.</p>
+                        <p class="precio-promo">S/ 20.00 <span>por persona</span></p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="seccion-info">
+                <table class="tabla-precios">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Horario de Inicio</th>
+                            <th>Horario de Cierre</th>
+                            <th>Disponibilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-solid fa-bell-concierge"></i> Recepción y Reservas</td>
+                            <td>06:00 AM</td>
+                            <td>11:00 PM</td>
+                            <td>Lunes a Domingo</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-utensils"></i> Restaurante </td>
+                            <td>07:00 AM</td>
+                            <td>10:00 AM</td>
+                            <td>Lunes a Domingo</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-shop"></i> Minimarket "RyV"</td>
+                            <td>08:00 AM</td>
+                            <td>10:00 PM</td>
+                            <td>Lunes a Domingo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="banner-festividades">
+                <div class="texto-festividades">
+                    <h3>🎉 Especial Fiestas Patronales</h3>
+                    <p>Durante las festividades de Santa Cruz de Cocachacra ofrecemos paquetes completos de alojamiento + alimentación. ¡Reserva con anticipación porque los cupos vuelan!</p>
+                </div>
+                <a href="#contacto" class="btn-contacto-banner">Consultar Paquetes</a>
+            </div>
+
+            <div class="contenedor-multimedia-centrado">
+                <video autoplay loop muted playsinline class="video-recorrido">
+                    <source src="videos/recorrido.mp4" type="video/mp4">
+                </video>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <div class="contenedor-contacto">
+            <div class="bloque-info-contacto">
+                <h2>Cómo Llegar y Contacto</h2>
+                <svg width="250" height="15" viewBox="0 0 250 15" fill="none" class="vector-separador-izq">
+                    <line x1="0" y1="7.5" x2="105" y2="7.5" stroke="var(--verde-oscuro)" stroke-width="2"/>
+                    <polygon points="125,0 135,7.5 125,15 115,7.5" fill="var(--verde-oscuro)"/>
+                    <line x1="145" y1="7.5" x2="250" y2="7.5" stroke="var(--verde-oscuro)" stroke-width="2"/>
+                </svg>
+                <p class="descripcion-contacto">Estamos ubicados en una zona estratégica y accesible de Huarochirí. ¡Ven a disfrutar de la naturaleza!</p>
+                
+                <div class="datos-lista">
+                    <p><i class="fa-solid fa-location-dot"></i> <b>Dirección:</b> Santa Cruz de Cocachacra, Distrito de Huarochirí, Lima, Perú.</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> <b>Teléfono / WhatsApp:</b> +51 999 999 999</p>
+                    <p><i class="fa-solid fa-envelope"></i> <b>Correo:</b> contacto@hospedajeryv.com</p>
+                    <p><i class="fa-solid fa-paw"></i> <b>Condición:</b> Local Pet Friendly (Sujeto a condiciones).</p>
+                </div>
+
+                <div class="mapa-contenedor">
+                    <div class="mapa-contenedor">
+                    <iframe src="https://maps.google.com/maps?q=Santa%20Cruz%20de%20Cocachacra,%20Huarochiri,%20Peru&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloque-formulario">
+                <h3>Envíanos un Mensaje</h3>
+                <form id="form-contacto-directo">
+                    <div class="campo-contacto">
+                        <label for="nombre-completo">Nombre Completo</label>
+                        <input type="text" id="nombre-completo" placeholder="Ej. Aylin Condor" required>
+                    </div>
+                    
+                    <div class="campo-contacto">
+                        <label for="correo-contacto">Correo Electrónico</label>
+                        <input type="email" id="correo-contacto" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="campo-contacto">
+                        <label for="mensaje-contacto">Consulta o Detalles de Reserva</label>
+                        <textarea id="mensaje-contacto" rows="4" placeholder="Escribe aquí tus dudas sobre los cuartos, festividades o mascotas..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-contacto">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contenido-footer">
+            <p>&copy; 2026 Hospedaje "RyV" - Santa Cruz de Cocachacra. Todos los derechos reservados.</p>
+            <p>Carrera de Ingeniería de Sistemas- UTP</p>
+        </div>
+        <div class="contenedor-audio">
+                <p class="titulo-audio">Música ambiental:</p>
+                <audio controls autoplay loop class="reproductor-audio">
+                    <source src="audio/bienvenida.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+    </footer>
+
+    <div id="modal-reserva" class="modal-container">
+    <div class="contenido-modal">
+        <button class="btn-cerrar-modal" onclick="cerrarModal()">&times;</button>
+        <h3><i class="fa-solid fa-bell-concierge"></i> Confirmación de Selección</h3>
+        <p id="mensaje-modal"></p>
+        <div class="modal-acciones">
+            <button class="btn-modal-aceptar" onclick="cerrarModal()">Aceptar</button>
+        </div>
+    </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <div id="modal-reserva" class="modal-oculto">
+    <div class="contenido-modal">
+        <h3 id="titulo-modal">Confirmación</h3>
+        <p id="mensaje-modal"></p>
+        <button onclick="cerrarModal()">Aceptar</button>
+    </div>
+</div>
+</body>
+</html>

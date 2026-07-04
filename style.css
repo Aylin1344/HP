@@ -1,0 +1,921 @@
+/* 1. VARIABLES Y RESETEO BÁSICO*/
+:root {
+    --verde-oscuro: #093320;
+    --verde-claro: #68c74b;
+    --beige: #e6d5b8; 
+    --blanco: #ffffff;
+    --texto-oscuro: #333333;
+    --fondo-claro: #FCFBF7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    background-color: var(--fondo-claro);
+    color: var(--texto-oscuro);
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. MENÚ DE NAVEGACIÓN FIJO */
+header {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+}
+.img-logo {
+    height: 45px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    transform: scale(2);
+    transform-origin: left center;
+}
+
+header h2 {
+    color: var(--blanco);
+}
+
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+    margin: 0;
+}
+nav a:hover {
+    opacity: 0.7;
+    color: var(--blanco);
+}
+
+/* 3. BANNER PRINCIPAL */
+.hero-banner {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('img/fondo.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+/* 4. SECCIONES*/
+/*nosotros*/
+.seccion-nosotros {
+    padding: 80px 5% 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.bienvenida-texto {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+.bienvenida-texto h2 {
+    color: var(--verde-oscuro);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+
+.bienvenida-texto p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+.galeria-nosotros {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+.galeria-nosotros img {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover; 
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.galeria-nosotros img:hover {
+    transform: scale(1.02);
+}
+
+.grid-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    margin-bottom: 50px;
+}
+.tarjeta-caracteristica {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--verde-oscuro);
+    transition: transform 0.3s;
+}
+.tarjeta-caracteristica:hover {
+    transform: translateY(-5px); 
+}
+
+.tarjeta-caracteristica h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.tarjeta-caracteristica p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+}
+.tarjeta-caracteristica.pet-friendly {
+    background-color: #fdfaf4; 
+    border-top: 4px solid var(--beige);
+}
+.mision-vision {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.caja-mv {
+    flex: 1;
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(9, 51, 32, 0.2);
+}
+
+.caja-mv h3 {
+    color: var(--beige);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.caja-mv p {
+    font-style: italic;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/*vectores */
+.vector-separador {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+.vector-separador {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+.vector-separador-izq {
+    display: block;
+    margin: 0 0 20px 0;
+}
+/*habitaciones*/
+.seccion-habitaciones {
+    background-color: var(--blanco);
+    padding: 80px 5%;
+}
+
+.contenedor-habitaciones {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-habitaciones h2 {
+    color: var(--verde-oscuro);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo-habitaciones {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.grid-cuartos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-cuarto {
+    background-color: var(--fondo-claro);
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-cuarto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.tarjeta-cuarto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; 
+}
+
+.info-cuarto {
+    padding: 25px;
+}
+
+.info-cuarto h3 {
+    color: var(--verde-oscuro);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.etiqueta-pet {
+    display: inline-block;
+    background-color: var(--beige);
+    color: var(--verde-oscuro);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.caracteristicas-cuarto {
+    list-style: none; 
+    margin-bottom: 20px;
+}
+
+.caracteristicas-cuarto li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.precio {
+    font-size: 1.8rem;
+    color: var(--verde-claro);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.precio span {
+    font-size: 1rem;
+    color: #888;
+    font-weight: normal;
+}
+
+.btn-reservar {
+    display: block;
+    width: 100%;
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: var(--verde-claro);
+}
+
+/*promociones*/
+.seccion-promociones {
+    background-color: var(--beige);
+    padding: 80px 5%;
+}
+
+.contenedor-promociones {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cabecera-promos {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cabecera-promos h2 {
+    color: var(--verde-oscuro);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.cabecera-promos p {
+    color: #444;
+    font-size: 1.1rem;
+}
+
+.grid-promos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.tarjeta-promo {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-promo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info-promo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.info-promo h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.info-promo p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.precio-promo {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: var(--verde-claro);
+    font-weight: bold;
+}
+
+.precio-promo span {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: normal;
+}
+
+.banner-festividades {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(9, 51, 32, 0.3);
+}
+
+.texto-festividades {
+    flex: 1;
+    min-width: 250px;
+}
+
+.texto-festividades h3 {
+    color: var(--verde-claro);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.texto-festividades p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.btn-contacto-banner {
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-contacto-banner:hover {
+    background-color: var(--verde-claro);
+    color: var(--blanco);
+    transform: scale(1.05);
+}
+/*videos*/
+.contenedor-multimedia-centrado {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.video-recorrido {
+    width: 70%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: block;
+}
+
+/*contacto*/
+.seccion-contacto {
+    background-color: var(--fondo-claro);
+    padding: 80px 5%;
+}
+
+.contenedor-contacto {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+}
+
+.bloque-info-contacto {
+    flex: 1;
+}
+
+.bloque-info-contacto h2 {
+    color: var(--verde-oscuro);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.descripcion-contacto {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.datos-lista i,
+.tabla-precios td i {
+    color: var(--verde-oscuro);
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+
+.mapa-contenedor {
+    margin-top: 25px;
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mapa-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e3df; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-weight: bold;
+    border: 2px dashed var(--beige);
+}
+
+
+.bloque-formulario {
+    flex: 1;
+    background-color: var(--blanco);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border-bottom: 5px solid var(--verde-oscuro);
+}
+
+.bloque-formulario h3 {
+    color: var(--verde-oscuro);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.campo-contacto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo-contacto label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--verde-oscuro);
+    margin-bottom: 6px;
+}
+
+.campo-contacto input, .campo-contacto textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.campo-contacto input:focus, .campo-contacto textarea:focus {
+    border-color: var(--verde-claro);
+}
+
+.btn-enviar-contacto {
+    width: 100%;
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-enviar-contacto:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-2px);
+}
+
+
+footer {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.contenido-footer p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* 5. MOTOR DE RESERVAS FLOTANTE */
+.motor-reserva {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 900px;
+}
+
+#reserva-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    min-width: 150px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--verde-oscuro);
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#reserva-form button {
+    background-color: var(--verde-oscuro); 
+    color: var(--blanco);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    flex: 1;
+    min-width: 200px;
+}
+
+#reserva-form button:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-2px);
+}
+
+/* 6. SECCIÓN DE INFO Y TABLA */
+.seccion-info {
+    padding: 40px 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.seccion-info h2 {
+    color: var(--verde-oscuro); 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tabla-precios th, .tabla-precios td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.tabla-precios th {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.img-cuarto {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* 7. PIE DE PÁGINA */
+footer {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+.contenedor-audio {
+    margin-top: 15px;
+}
+
+.titulo-audio {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.reproductor-audio {
+    height: 30px;
+    border-radius: 15px;
+}
+
+/* 8. RESPONSIVO  */
+@media (max-width: 900px) {
+    .grid-caracteristicas {
+        grid-template-columns: 1fr;
+    }
+    
+    .mision-vision {
+        flex-direction: column;
+    }
+
+    .galeria-nosotros {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        width: 100%;
+        padding: 15px 5%;
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+
+    .menu-hamburger {
+        display: block; 
+    }
+
+    nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        background-color: var(--verde-oscuro);
+        padding: 20px;
+        gap: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav.activo {
+        display: flex;
+    }
+}
+
+
+
+.modal-container {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container.mostrar {
+    display: flex;
+}
+
+.contenido-modal {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: desplegarModal 0.3s ease;
+}
+
+@keyframes desplegarModal {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.btn-cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.contenido-modal h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 15px;
+}
+
+.btn-modal-aceptar {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn-modal-aceptar:hover {
+    background-color: var(--verde-claro);
+}
+
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* 9. App.java */
+.modal-oculto {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+}
+.contenido-modal {
+    background: white;
+    margin: 15% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.contenedor-carrusel {
+    position: relative;
+    width: 100%;
+    height: 220px; 
+    overflow: hidden;
+    background-color: #000;
+}
+
+.contenedor-carrusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.flecha-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(9, 51, 32, 0.75);
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    
+
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s;
+}
+
+
+.contenedor-carrusel:hover .flecha-carrusel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.flecha-carrusel:hover {
+    background-color: var(--verde-oscuro, #093320);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.flecha-carrusel.izq {
+    left: 15px;
+}
+
+.flecha-carrusel.der {
+    right: 15px;
+}
